@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    form {
+      margin-top: 50px;
+      margin-left: 150px;
+      margin-right: 150px;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <title>Food Demand Forecasting</title>
+</head>
+
+<body>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">FoodAid</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'landing' %}">Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <form method="POST">
+    {% csrf_token %}
+    <div class="form-group row">
+      <label for="category" class="col-3 col-form-label">Category</label>
+      <div class="col-4">
+        <select id="category" name="category" class="custom-select" required="required">
+          <option value="0">Beverages</option>
+          <option value="8">Rice Bowl</option>
+          <option value="13">Starters</option>
+          <option value="6">Pasta</option>
+          <option value="10">Sandwich</option>
+          <option value="1">Biryani</option>
+          <option value="3">Extras</option>
+          <option value="7">Pizza</option>
+          <option value="11">Seafood</option>
+          <option value="5">Other Snacks</option>
+          <option value="2">Desert</option>
+          <option value="12">Soup</option>
+          <option value="9">Salad</option>
+          <option value="4">Fish</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="cuisine" class="col-3 col-form-label">Cuisine</label>
+      <div class="col-4">
+        <select id="cuisine" name="cuisine" class="custom-select" required="required">
+          <option value="3">Thai</option>
+          <option value="1">Indian</option>
+          <option value="2">Italian</option>
+          <option value="0">Continental</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="week" class="col-3 col-form-label">Week</label>
+      <div class="col-4">
+        <input id="week" name="week" placeholder="Week" class="form-control" required="required" type="number">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="checkout_price" class="col-3 col-form-label">Checkout Price</label>
+      <div class="col-4">
+        <input id="checkout_price" name="checkout_price" placeholder="Checkout Price" class="form-control"
+          required="required" type="number" step="0.01">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="base_price" class="col-3 col-form-label">Base Price</label>
+      <div class="col-4">
+        <input id="base_price" name="base_price" placeholder="Base Price" class="form-control" required="required"
+          type="number" step="0.01">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="emailer" class="col-3 col-form-label">Emailer</label>
+      <div class="col-4">
+        <select id="emailer" name="emailer" class="custom-select" required="required">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="homepage" class="col-3 col-form-label">Homepage</label>
+      <div class="col-4">
+        <select id="homepage" name="homepage" class="custom-select" required="required">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+      </div>
+    </div>
+      <div class="form-group row">
+        <label for="city" class="col-3 col-form-label">City Code</label>
+        <div class="col-4">
+          <input id="city" name="city" placeholder="Enter City Code" type="text" class="form-control" required="required">
+        </div>
+      </div>
+    <div class="form-group row">
+      <label for="region" class="col-3 col-form-label">Region Code</label>
+      <div class="col-4">
+        <input id="region" name="region" placeholder="Enter Region Code" type="text" class="form-control"
+          required="required">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="op_area" class="col-3 col-form-label">Operational Area</label>
+      <div class="col-4">
+        <input id="op_area" name="op_area" placeholder="Operational Area" class="form-control" required="required"
+          type="number" step="0.01">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="center_type" class="col-3 col-form-label">Center Type</label>
+      <div class="col-4">
+        <select id="center_type" name="center_type" class="custom-select" required="required">
+          <option value="0">Type A</option>
+          <option value="1">Type B</option>
+          <option value="2">Type C</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="offset-4 col-8">
+        <button name="submit" type="submit" class="btn btn-primary">Predict</button>
+      </div>
+    </div>
+  </form>
+
+  {% if output_svr or output_rfr or output_gbm %}
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Sales Prediction Results</h5>
+      {% if output_svr %}
+      <p>XGBoost : {{ output_svr }}</p>
+      {% endif %}
+      {% if output_rfr %}
+      <p>Random Forest Regression (RFR): {{ output_rfr }}</p>
+      {% endif %}
+      {% if output_gbm %}
+      <p>Gradient Boosting Regression (GBM): {{ output_gbm }}</p>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

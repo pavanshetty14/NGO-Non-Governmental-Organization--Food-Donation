@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FoodAid</title>
+		<link rel="stylesheet" href="css/slideshower.css">
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<!------ Include the above in your HEAD tag ---------->
+</head>
+
+<style type="text/css">
+/* for division */  
+.flex-container{
+    width: auto;
+    min-height: 300px;
+    margin: 0 auto;
+    display: -webkit-flex; /* Safari */     
+    display: flex; /* Standard syntax */
+}
+.flex-container .column{
+    padding: 10px;
+    background: #dbdfe5;
+    -webkit-flex: 1; /* Safari */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* Standard syntax */
+}
+.flex-container .column.bg-alt{
+    background: #ffffff;
+}
+
+/* for login form */  
+* {
+box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+input {
+font-family: Raleway;
+text-align: center;
+background-color: #ECF0F1;
+border: 2px solid transparent;
+border-radius: 3px;
+font-size: 16px;
+font-weight: 200;
+padding: 10px 0;
+width: 250px;
+transition: border .5s;
+}
+input[type=button] {
+    background-color:#8ba5d9;
+
+}
+input:focus {
+border: 2px solid #3498DB;
+box-shadow: none;
+}
+
+/*header style start*/
+body {
+    margin: 0;
+    font-family: Raleway;;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #f7f7f7;
+}
+.navbar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+/*
+headeer top
+*/
+.topbar{
+  background-color: #212529;
+  padding: 0;
+}
+
+.topbar .container .row {
+  margin:-7px;
+  padding:0;
+}
+
+.topbar .container .row .col-md-12 { 
+  padding:0;
+}
+
+.topbar p{
+  margin:0;
+  display:inline-block;
+  font-size: 13px;
+  color: #f1f6ff;
+}
+
+.topbar p > i{
+  margin-right:5px;
+}
+.topbar p:last-child{
+  text-align:right;
+} 
+
+header .navbar {
+    margin-bottom: 0;
+}
+
+.topbar li.topbar {
+    display: inline;
+    padding-right: 18px;
+    line-height: 52px;
+    transition: all .3s linear;
+}
+
+.topbar li.topbar:hover {
+    color: #1bbde8;
+}
+
+.topbar ul.info i {
+    color: #131313;
+    font-style: normal;
+    margin-right: 8px;
+    display: inline-block;
+    position: relative;
+    top: 4px;
+}
+
+.topbar ul.info li {
+    float: right;
+    padding-left: 30px;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 44px;
+}
+
+.topbar ul.info i span {
+    color: #aaa;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 50px;
+    padding-left: 18px;
+}
+
+ul.social-network {
+  border:none;
+  margin:0;
+  padding:0;
+}
+
+ul.social-network li {
+  border:none;  
+  margin:0;
+}
+
+ul.social-network li i {
+  margin:0;
+}
+
+ul.social-network li {
+    display:inline;
+    margin: 0 5px;
+    border: 0px solid #2D2D2D;
+    padding: 5px 0 0;
+    width: 32px;
+    display: inline-block;
+    text-align: center;
+    height: 32px;
+    vertical-align: baseline;
+    color: #000;
+}
+
+ul.social-network {
+  list-style: none;
+  margin: 5px 0 10px -25px;
+  float: right;
+}
+
+.waves-effect {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    will-change: opacity, transform;
+    transition: .3s ease-out;
+    color: #fff;
+}
+a {
+  color: #0a0a0a;
+  text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+.bg-image-full {
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.bg-dark {
+    background-color: #222!important;
+}
+
+.mx-background-top-linear {
+    background: -webkit-linear-gradient(45deg, #d35f00 48%, #1b1e21 48%);
+    background: -webkit-linear-gradient(left, #d35f00 48%, #1b1e21 48%);
+    background: linear-gradient(45deg, #d35f00 48%, #1b1e21 48%);
+}
+/*header style end*/
+
+</style>
+<body>
+
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- Navigation -->
+<div class="fixed-top">
+  <header class="topbar">
+      <div class="container">
+        <div class="row">
+          <!-- social icon-->
+          <div class="col-sm-12">
+            <ul class="social-network">
+              <li><a class="waves-effect waves-dark" href="#"><i ></i></a></li>
+              <li><a class="waves-effect waves-dark" href="#"><i ></i></a></li>
+              <li><a class="waves-effect waves-dark" href="#"><i ></i></a></li>
+              <li><a class="waves-effect waves-dark" href="#"><i ></i></a></li>
+              <li><a class="waves-effect waves-dark" href="#"></a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" style="text-transform: uppercase;"> FoodAid</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost/NGO/">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#admin">AdminLogin</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<br><br><br>
+
+<!--slideshower-->
+<div class="CSSgal">
+
+  <!-- Don't wrap targets in parent -->
+  <s id="s1"></s> 
+  <s id="s2"></s>
+  <s id="s3"></s>
+  <s id="s4"></s>
+
+  <div class="slider">
+      <div style="background-image: url('images/6.jpeg');">
+    </div>
+
+    <div style="background-image: url('images/2.jpeg');">
+            <h2 style="font-family: Raleway; color: #0840f5;">Don't Waste, Donate</h2>
+        </div>
+
+    <div style="background-image: url('images/5.jpg');">
+            <h2 style="font-family: Raleway;">Eat Responsibly, Waste Less</h2>
+        </div>
+
+    <div style="background-image: url('images/7.jpeg');">
+            <h2 style="font-family: Raleway;">Make Every Bite Count, Reduce Food Waste</h2>
+        </div>
+  </div>
+  
+  <div class="prevNext">
+    <div><a href="#s4"></a><a href="#s2"></a></div>
+    <div><a href="#s1"></a><a href="#s3"></a></div>
+    <div><a href="#s2"></a><a href="#s4"></a></div>
+    <div><a href="#s3"></a><a href="#s1"></a></div>
+  </div>
+
+
+
+</div>
+
+<!--End of slideshower-->
+<br>
+<div id="admin">
+        <h1>Admin Login</h1><br>
+        <form name="login">
+            Username&nbsp;&nbsp;<input type="text" name="userid"/>&nbsp;&nbsp;&nbsp;
+            Password&nbsp;&nbsp;<input type="password" name="pswrd"/>&nbsp;&nbsp;&nbsp;
+            <input type="button" onclick="check(this.form)" value="Login"/>
+        </form>
+        <script language="javascript">
+            function check(form) { /*function to check userid & password*/
+                /*the following code checkes whether the entered userid and password are matching*/
+                if(form.userid.value == "group 1" && form.pswrd.value == "1234") {
+                    window.location.href = "admin/ngoregister.php";/*opens the target page while Id & password matches*/
+                }
+                else {
+                    alert("Error Password or Username")/*displays error message*/
+                }
+            }
+        </script>
+</div>
+<br>
+
+<!--start of contact form-->
+
+
+</body>
+<br><br><br><br><br><br>
+
+<footer 
+    style=" 
+    position: fixed;
+    background-color:#1b1e21; 
+    color: white;padding: 10px;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 20px;
+    left: 0;
+    bottom: 0;
+    width: 100%;">
+    Developed and Maintained by Group 1
+</footer>
+</html>

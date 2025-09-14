@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Food Waste Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            margin-right: 10px;
+        }
+
+        .navbar li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .navbar li a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+        }
+
+        .graph-container {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            display: inline;
+        }
+
+        .graph {
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .graph img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="http://127.0.0.1:8000/">Home</a></li>
+        </ul>
+    </div>
+
+    <h1>Food Waste Analysis</h1>
+
+    <div class="container">
+        <h2>Geographical Areas</h2>
+        <p>
+            We want to highlight that the geographical areas most involved in food loss are:
+            Australia-New Zealand, Africa, and the whole world.
+        </p>
+        <p>
+            In Australia and New Zealand, many producers, transporters, and retailers are subject to stringent quality
+            standards, resulting in edible products being rejected if they don't meet those standards.
+        </p>
+        <p>
+            In Africa, logistical and infrastructural challenges, such as inadequate roads, vehicles, and storage
+            systems, contribute to food loss during transportation and storage.
+        </p>
+        <p>
+            Lack of access to markets and efficient distribution systems in Africa make it difficult for local producers
+            to sell their products, even if they are fresh and edible.
+        </p>
+
+        <h2>Food Supply Stages</h2>
+        <p>
+            In areas with greater economic well-being like Europe and North America, the greatest waste of food occurs
+            at the household level.
+        </p>
+        <p>
+            In Africa, food waste is a concern throughout the entire supply chain.
+        </p>
+        <p>
+            Globally, the post-harvest stage and households contribute the most to food waste due to the aforementioned
+            reasons.
+        </p>
+    </div>
+
+    <div class="graph-container">
+        <h2>Geographical areas</h2>
+        <img class="graph" src="images/image1.png" alt="Graph Image">
+        <p>As can be seen from the boxplots of the geographical areas with respect to the percentage of food loss, the
+            median and
+            rectangles representing between 25% and 75% of the distributions are shifted towards higher values of the
+            loss in New
+            Zealand, Africa, and the World</p>
+    </div>
+    <div class="graph-container">
+        <h2>Food supply stages:</h2>
+        <div class="graph">
+            <img src="images/image2.png" alt="First Image">
+        </div>
+        <div class="graph">
+            <img src="images/image3.png" alt="First Image">
+        </div>
+        <div class="graph">
+            <img src="images/image5.png" alt="First Image">
+        </div>
+        <div class="graph">
+            <img src="images/image14.png" alt="First Image">
+        </div>
+        <div class="graph">
+            <img src="images/image15.png" alt="First Image">
+        </div>
+        <div class="graph">
+            <img src="images/image16.png" alt="First Image">
+        </div>
+        <p>As regards Food supply stages we want to highlight that in geographical areas where there is greater economic
+            well-being
+            such as Europe and North America, the greatest waste of food occurs by households, while in Africa it
+            concerns whole
+            supply chains. On average in the world, it is post-harvest and households that create the greatest waste of
+            food for
+            the
+            aforementioned reasons.</p>
+    </div>
+</body>
+
+</html>
